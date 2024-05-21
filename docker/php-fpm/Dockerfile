@@ -34,7 +34,10 @@ RUN apk add --no-cache \
     grep \
     mercurial \
     make \
-    wget
+    wget \
+    shadow
+
+RUN groupmod -g 1000 www-data && usermod -u 1000 -g 1000
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
