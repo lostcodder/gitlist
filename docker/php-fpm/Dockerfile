@@ -37,17 +37,13 @@ RUN apk add --no-cache \
     wget \
     shadow
 
-RUN groupmod -g 1000 www-data && usermod -u 1000 -g 1000
-
-ENV COMPOSER_ALLOW_SUPERUSER 1
+RUN groupmod -g 1000 www-data && usermod -u 1000 -g 1000 www-data
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2
 
 ENV PATH="/application/bin:/application/vendor/bin:${PATH}"
 
 WORKDIR "/application"
-
-CMD ["php-fpm", "--allow-to-run-as-root"]
 
 COPY php.ini /usr/local/etc/php/conf.d/99-overrides.ini
 COPY php-fpm.d/* /usr/local/etc/php-fpm.d/
