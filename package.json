@@ -4,6 +4,7 @@
   "repository": "https://github.com/klaussilveira/gitlist",
   "license": "BSD-3-Clause",
   "scripts": {
+    "start": "npm ci && npm run watch",
     "dev-server": "encore dev-server",
     "dev": "encore dev",
     "watch": "encore dev --watch",
@@ -24,7 +25,7 @@
     "@symfony/webpack-encore": "^1.7",
     "autoprefixer": "^10.4",
     "cssnano": "^5.0",
-    "cypress": "^9.2.1",
+    "cypress": "^13.9.0",
     "file-loader": "^6.2",
     "husky": "^7.0",
     "postcss-loader": "^6.2",

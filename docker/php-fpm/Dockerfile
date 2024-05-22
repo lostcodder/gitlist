@@ -48,3 +48,5 @@ CMD ["php-fpm", "--allow-to-run-as-root"]
 
 COPY php.ini /usr/local/etc/php/conf.d/99-overrides.ini
 COPY php-fpm.d/* /usr/local/etc/php-fpm.d/
+
+RUN git config --global --add safe.directory /var/repos/test1
